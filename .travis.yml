@@ -1,0 +1,22 @@
+language: ruby
+
+rvm:
+  - 2.5
+
+script:
+  - make
+
+deploy:
+  provider: pages
+  github-token: ${GH_TOKEN}
+  skip-cleanup: true
+  local-dir: public
+  keep-history: true
+  email: deploy@travis-ci.org
+  name: Travis CI
+  on:
+    branch: master
+
+notifications:
+  webhooks:
+    - https://h2a-hubot.herokuapp.com/webhooks/travis

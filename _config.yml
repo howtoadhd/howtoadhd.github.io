@@ -1,0 +1,64 @@
+# Dependencies
+markdown:       kramdown
+highlighter:    rouge
+
+kramdown:
+  auto_ids:     true
+
+
+# Permalinks
+permalink: pretty
+
+
+# Server
+source:         "."
+destination: ./public
+baseurl: ''
+url: https://howtoadhd.github.io
+theme: jekyll-theme-howtoadhd
+encoding: UTF-8
+
+
+# Social
+title: How To ADHD Engineering
+description: Default
+
+
+# Plugins
+plugins:
+  - jekyll-redirect-from
+  - jekyll-toc
+
+toc:
+  min_level: 2
+  max_level: 3
+
+# Frontmatter
+defaults:
+  - scope:
+      path: '' # an empty string here means all files in the project
+    values:
+      layout: 'default'
+      order: 99999
+
+  - scope:
+      path: 'guides'
+    values:
+      section_title: 'Guides'
+      section_description: How To Things
+      section_nav:
+        - title: 'Local Development'
+          url: '/guides/local-development/getting-started/introduction/'
+          active_when: '/guides/local-development/'
+
+  - scope:
+      path: 'guides/local-development'
+    values:
+      layout: 'docs'
+      section: '/guides/local-development'
+
+  - scope:
+      path: 'projects'
+    values:
+      section_title: 'Projects'
+      section_description: 'We &hearts; Open Source'
