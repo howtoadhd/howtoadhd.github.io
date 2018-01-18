@@ -12,10 +12,11 @@ deploy:
   skip-cleanup: true
   local-dir: public
   keep-history: true
+  target-branch: master
   email: deploy@travis-ci.org
   name: Travis CI
   on:
-    branch: master
+    branch: src
 
 notifications:
   webhooks:
